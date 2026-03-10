@@ -4,7 +4,7 @@ import react from "react";
 //         <button className={`px-3 py-2 ${color} text-white text-xs rounded-full m-2`}>{text}</button>
 //     )
 // }
-function Card({values,handleClick}){
+function Card({values,handleClick,friend,index}){
     const {name,profession,image}= values
     return(
         <div className="w-52 bg-white rounded-md overflow-hidden flex justify-center items-center">
@@ -14,7 +14,7 @@ function Card({values,handleClick}){
             <div className="w-full p-3">
                 <h3 className="text-xl font-semibold">{name}</h3>
                 <h5 className="text-xs">{profession}</h5>
-                <button onClick={handleClick} className="mt-4 px-3 py-1 text-xs text-white bg-blue-500 font-semibold rounded-nd">Add friends</button>
+                <button key={index} index = {index} onClick={handleClick} className="mt-4 px-3 py-1 text-xs text-white bg-blue-500 font-semibold rounded-nd">{friend === true ? "friend":"add friend"}</button>
             </div>
         </div>
     )

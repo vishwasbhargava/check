@@ -21,3 +21,5 @@ function doc() {
     </div>
   )
 }
+
+// props use hote hai appke componenets ko reuseable bannane ke ;iye , consider karo apke paas ek button hai and apko us button ko alag alag jagah daalna hai app mein to app ek button componenet banaye  and uska data hard coded karne ki jagah parent componenet se send karde and child component par use kar le
