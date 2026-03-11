@@ -104,27 +104,23 @@
 // }
 import react, { useState } from "react";
 import Card from "./components/Card";
+import { TbFriends } from "react-icons/tb";
 function App(){
-    const data = [
-        {name : "vishwas",profession:"artist", image:'https://images.unsplash.com/photo-1532635241-17e820acc59f?q=80&w=815&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friend:false},
-        {name : "suresh",profession:"cricketer", image:'https://plus.unsplash.com/premium_photo-1669703777437-27602d656c27?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friend:false},
-        {name : "honey",profession:"footballer", image:'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friend:true},
-        {name : "rocky",profession:"hockeyplayer", image:'https://images.unsplash.com/photo-1522556189639-b150ed9c4330?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friend:false}]
-        const [realdata,setrealdata]= useState(data);
-        const handleFriendClick=(Cardindex)=>{
-            setrealdata((previous)=>{
-             return   previous.map((item,index)=>{if(index===Cardindex){
-                return {...item,friend: !item.friend}
-
-            }
-        return item;})
-        })
-        }
+    const raw = [
+        {name : "vishwas",profession:"artist", image:'https://images.unsplash.com/photo-1532635241-17e820acc59f?q=80&w=815&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false},
+        {name : "suresh",profession:"cricketer", image:'https://plus.unsplash.com/premium_photo-1669703777437-27602d656c27?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false},
+        {name : "honey",profession:"footballer", image:'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:true},
+        {name : "rocky",profession:"hockeyplayer", image:'https://images.unsplash.com/photo-1522556189639-b150ed9c4330?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false}]
+        const [data,setData]= useState(raw);
+        const handleClick = (changingIndex)=>{setData((prev)=>{return prev.map((item,index)=>{if(index===changingIndex)return{...item, friends:!item.friends};
+        return item;
+    
+    })})}
         return(
             <>
             <div>
         {data.map((item,index)=>(
-            <Card values = {item} handleClick={handleFriendClick}/>
+            <Card key={index} index={index} values = {item} handleClick={handleClick}/>
         ))}
             </div>
             
