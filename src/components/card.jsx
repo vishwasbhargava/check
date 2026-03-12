@@ -7,7 +7,7 @@ import react from "react";
 function Card({ values, handleClick, friends, index }) {
   const { name, profession, image } = values;
   return (
-    <div className="w-52 bg-white rounded-md overflow-hidden flex justify-center items-center">
+    <div className="w-52 bg-white rounded-md overflow-hidden flex-col justify-center items-center">
       <div className=" w-full h-40 bg-sky-200">
         <img className="w-full h-full object-cover" src={image} alt="" />
       </div>
@@ -18,7 +18,7 @@ function Card({ values, handleClick, friends, index }) {
           onClick={() => handleClick(index)}
           className={`mt-4 px-3 py-1 text-xs text-white ${friends ? "bg-blue-600":"bg-red-500"} font-semibold rounded-md`}
         >
-          {friend === true ? "friend" : "add friend"}
+          {friends ? "friends" : "add friends"}
         </button>
       </div>
     </div>

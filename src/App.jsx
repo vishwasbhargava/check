@@ -102,31 +102,65 @@
 //         </div>
 //     )
 // }
-import react, { useState } from "react";
-import Card from "./components/Card";
-import { TbFriends } from "react-icons/tb";
-function App(){
-    const raw = [
-        {name : "vishwas",profession:"artist", image:'https://images.unsplash.com/photo-1532635241-17e820acc59f?q=80&w=815&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false},
-        {name : "suresh",profession:"cricketer", image:'https://plus.unsplash.com/premium_photo-1669703777437-27602d656c27?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false},
-        {name : "honey",profession:"footballer", image:'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:true},
-        {name : "rocky",profession:"hockeyplayer", image:'https://images.unsplash.com/photo-1522556189639-b150ed9c4330?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false}]
-        const [data,setData]= useState(raw);
-        const handleClick = (changingIndex)=>{setData((prev)=>{return prev.map((item,index)=>{if(index===changingIndex)return{...item, friends:!item.friends};
-        return item;
+// props
+// import react, { useState } from "react";
+// import Card from "./components/Card";
+// import { TbFriends } from "react-icons/tb";
+// function App(){
+//     const raw = [
+//         {name : "vishwas",profession:"artist", image:'https://images.unsplash.com/photo-1532635241-17e820acc59f?q=80&w=815&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false},
+//         {name : "suresh",profession:"cricketer", image:'https://plus.unsplash.com/premium_photo-1669703777437-27602d656c27?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false},
+//         {name : "honey",profession:"footballer", image:'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:true},
+//         {name : "rocky",profession:"hockeyplayer", image:'https://images.unsplash.com/photo-1522556189639-b150ed9c4330?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',friends:false}]
+//         const [data,setData]= useState(raw);
+//         const handleClick = (changingIndex)=>{setData((prev)=>{return prev.map((item,index)=>{if(index===changingIndex)return{...item, friends:!item.friends};
+//         return item;
     
-    })})}
-        return(
-            <>
-            <div>
-        {data.map((item,index)=>(
-            <Card key={index} index={index} values = {item} handleClick={handleClick}/>
-        ))}
-            </div>
+//     })})}
+//         return(
+//             <>
+//             <div>
+//         {data.map((item,index)=>(
+//             <Card key={index} index={index} values = {item} handleClick={handleClick}/>
+//         ))}
+//             </div>
             
-            </>
-        )
+//             </>
+//         )
         
 
+// }
+// export default App;
+//props drilling
+import react, { useState } from "react";
+import Nav from "./components/Nav";
+import Carding from "./components/Carding"
+function App(){
+    const data =[
+        {image:'https://plus.unsplash.com/premium_photo-1683140707316-42df87760f3f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',name:"hdh",artist:"arjit",added:false},
+        {image:'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',name:"vsgdgv",artist:"sggh",added:false},
+        {image:'https://images.unsplash.com/photo-1471478331149-c72f17e33c73?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',name:"shdh",artist:"shks",added:false},
+        {image:'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',name:"gsdj",artist:"jslask",added:false},
+    ]
+    const [songData,setSongData]= useState(data);
+    const handleClick = (index)=>{setSongData((prev)=>{return prev.map((item,itemindex)=>{
+        if(itemindex===index)return{
+            ...item,added:!item.added
+        };
+        return item;
+    })})}
+    
+    return(
+        <div>
+            <Nav/>
+            <div className="px-20 mt-10 flex flex-wrap gap-4">
+                {songData.map(obj=>(<Carding data={obj} key={index} index={index} handleClick={handleClick} /> ) )}
+                 </div>
+            
+        </div>
+            
+
+        
+    )
 }
 export default App;
