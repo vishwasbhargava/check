@@ -1,5 +1,5 @@
 import react from "react";
-function Carding({data,index}){
+function Carding({data,index,handleClick}){
     const {image,name,artist,added} = data;
     return(
         <div className="w-60 bg-zinc-600 p-4 rounded-md flex gap-4 pb-8 relative">
