@@ -1,8 +1,5 @@
 // import react, { useState } from "react";
 
-
-
-
 // function App() {
 //   const [val,setval] = useState({name : "vishwas" , isbanned:false});
 //   return (
@@ -11,7 +8,6 @@
 //  <h2>{val.isbanned.toString()}</h2>
 //  <button onClick={()=>setval({...val,isbanned:!val.isbanned})} className={`px-3 py-2 text-white ${val.isbanned ? " bg-blue-600":"bg-red-500"} rounded-full mt-2`}>change</button>
 
-    
 //   </div>
 //   );
 // }
@@ -34,7 +30,7 @@
 //         <button onClick={()=>setval(()=>{return val.filter ((item,index)=> index!= val.item.length-1)})} className="px-2 py-1 bg-blue-600 text-xs text-white rounded-full mt-2">click</button>
 
 //     </div>
-    
+
 //   )
 // }
 // function App() {
@@ -115,7 +111,7 @@
 //         const [data,setData]= useState(raw);
 //         const handleClick = (changingIndex)=>{setData((prev)=>{return prev.map((item,index)=>{if(index===changingIndex)return{...item, friends:!item.friends};
 //         return item;
-    
+
 //     })})}
 //         return(
 //             <>
@@ -124,10 +120,9 @@
 //             <Card key={index} index={index} values = {item} handleClick={handleClick}/>
 //         ))}
 //             </div>
-            
+
 //             </>
 //         )
-        
 
 // }
 // export default App;
@@ -149,29 +144,89 @@
 //         };
 //         return item;
 //     })})}
-    
+
 //     return(
 //         <div>
 //             <Nav data ={songData}/>
 //             <div className="px-20 mt-10 flex flex-wrap gap-4">
 //                 {songData.map(obj=>(<Carding data={obj} key={index} index={index} handleClick={handleClick} /> ) )}
 //                  </div>
-            
-//         </div>
-            
 
-        
+//         </div>
+
 //     )
 // }
 // export default App;
-import react from "react";
-import form from "./components/form"
-function App({form}){
-    return(
-        <div>
-            <form/>
 
-        </div>
-    )
+// use ref
+// import react, { useRef } from "react";
+
+// function App() {
+//   const name = useRef(null);
+//   const age = useRef(null);
+//   const email = useRef(null);
+//   const handleClick = (details)=>{
+//     details.preventDefault();
+//     console.log(name.current.value ,age.current.value , email.current.value );
+//   }
+
+//   return (
+//     <form action="" onSubmit={handleClick}>
+//       <input ref={name} type="text" placeholder="name" />
+//       <input ref={age} type=" text" placeholder="age" />
+//       <input ref={email} type="text" placeholder="email" />
+//       <input type="submit" />
+//     </form>
+//   );
+// }
+// export default App;
+// component
+//   import react, { useState } from "react";
+//   function App(){
+
+//     const [val,setval]= useState({name:"" ,age:""})
+//     const handleClick = (event)=>{
+//         event.preventDefault();
+//         console.log(val);
+
+//     }
+//     return(
+//         <form action="" onSubmit={handleClick}>
+//             <input onChange={(event)=>setval({...val,name:event.target.value })} type="text" placeholder="name" />
+//             <input onChange={(event)=>setval({...val,age:event.target.value })} type="text" placeholder="age" />
+//             <input  type="submit" />
+//         </form>
+//     )
+//   }
+//   export default App;
+
+
+
+// import react from "react";
+// import Form from "./components/form";
+
+// function App() {
+//   return (
+//     <div>
+//       <Form />
+//     </div>
+//   );
+// }
+// export default App;
+
+import react, { useState } from "react";
+import Cards from "./components/Cards";
+import Form from "./components/form";
+function App(){
+  const [users,setUsers]= useState([1]);
+  return(
+    <div className="w-full h-full bg-zinc-600 flex items-center justify-center">
+      <div className="mx-auto">
+        <Cards users ={users}/>
+        <Form/>
+
+      </div>
+    </div>
+  )
 }
 export default App;
