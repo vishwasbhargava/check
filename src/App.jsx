@@ -1,5 +1,7 @@
 // import react, { useState } from "react";
 
+const { RiFacebookBoxFill } = require("react-icons/ri");
+
 // function App() {
 //   const [val,setval] = useState({name : "vishwas" , isbanned:false});
 //   return (
@@ -214,27 +216,52 @@
 // }
 // export default App;
 
-import react, { useState } from "react";
-import Cards from "./components/Cards";
-import Form from "./components/form";
-// import { data } from "autoprefixer";
-function App(){
-  const [users,setUsers] = useState([]);
-  const handleFormSubmitData = (data)=>{
-    setUsers([...users,data])
-  }
-  const handleRemove=(id)=>{
-    console.log(id);
-    setUsers(()=>users.filter((item,index)=>index!=id))}
+// import react, { useState } from "react";
+// import Cards from "./components/Cards";
+// import Form from "./components/form";
+// // import { data } from "autoprefixer";
+// function App(){
+//   const [users,setUsers] = useState([]);
+//   const handleFormSubmitData = (data)=>{
+//     setUsers([...users,data])
+//   }
+//   const handleRemove=(id)=>{
+//     console.log(id);
+//     setUsers(()=>users.filter((item,index)=>index!=id))}
   
-  return(
-    <div className="w-full h-full bg-zinc-600 flex items-center justify-center">
-      <div className="mx-auto">
-        <Cards users ={users} handleRemove={handleRemove}/>
-        <Form handleFormSubmitData={handleFormSubmitData}/>
+//   return(
+//     <div className="w-full h-full bg-zinc-600 flex items-center justify-center">
+//       <div className="mx-auto">
+//         <Cards users ={users} handleRemove={handleRemove}/>
+//         <Form handleFormSubmitData={handleFormSubmitData}/>
 
-      </div>
-    </div>
-  )
-}
+//       </div>
+//     </div>
+//   )
+// }
+// export default App;
+import react from "react";
+import {Link,Route,Routes} from "react-router-dom";
+import Home from "./components/home";
+import User from "./components/User";
+import About from "./components/About";
+const App =()=>{
+    return(
+        <>
+<nav className="mt-10 flex justify-center gap-10">
+    <Link to="/" >Home</Link>
+     <Link to="/User" >User</Link>
+      <Link to="/About" >About</Link>
+</nav>
+<Routes>
+    <Route path ="/" element={<Home/>} />
+    <Route path ="/User" element={<User/>} />
+    <Route path ="/About" element={<About/>} />
+
+   
+</Routes>
+        
+        </>
+    );
+};
 export default App;
