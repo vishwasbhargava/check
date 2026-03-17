@@ -1,5 +1,5 @@
 import react from "react";
-import Home from "./componenets/Home"
+import Home from "./components/Home";
 import User from "./components/User";
 import About from "./components/About";
 const Routing = ()=>{
