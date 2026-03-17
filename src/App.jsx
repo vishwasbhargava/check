@@ -241,7 +241,7 @@
 // }
 // export default App;
 import react from "react";
-import {Link,Route,Routes} from "react-router-dom";
+// import {Link,Route,Routes} from "react-router-dom";
 // import Home from "./components/home";
 // import User from "./components/User";
 // import About from "./components/About";
