@@ -18,7 +18,11 @@ import react from "react";
 import { useForm } from "react-hook-form";
 
 function Form({handleFormSubmitData}){
-   const {register,handleSubmit} = useForm()
+   const {register,handleSubmit,reset} = useForm()
+   const handleFormSubmit=(data)=>{
+    handleFormSubmitData(data);
+    reset();
+   }
     return(
         <div className="mt-10 flex justify-center gap-10">
            <form className="flex gap-10" onSubmit={handleSubmit(data=> handleFormSubmitData(data) )} >

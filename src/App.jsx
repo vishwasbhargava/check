@@ -217,17 +217,20 @@
 import react, { useState } from "react";
 import Cards from "./components/Cards";
 import Form from "./components/form";
-import { data } from "autoprefixer";
+// import { data } from "autoprefixer";
 function App(){
   const [users,setUsers] = useState([]);
   const handleFormSubmitData = (data)=>{
     setUsers([...users,data])
   }
+  const handleRemove=(id)=>{
+    console.log(id);
+    setUsers(()=>users.filter((item,index)=>index!=id))}
   
   return(
     <div className="w-full h-full bg-zinc-600 flex items-center justify-center">
       <div className="mx-auto">
-        <Cards users ={users}/>
+        <Cards users ={users} handleRemove={handleRemove}/>
         <Form handleFormSubmitData={handleFormSubmitData}/>
 
       </div>
