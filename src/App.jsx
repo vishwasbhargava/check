@@ -1,6 +1,6 @@
 // import react, { useState } from "react";
 
-const { RiFacebookBoxFill } = require("react-icons/ri");
+//  const { RiFacebookBoxFill } = require("react-icons/ri");
 
 // function App() {
 //   const [val,setval] = useState({name : "vishwas" , isbanned:false});
@@ -245,18 +245,15 @@ import {Link,Route,Routes} from "react-router-dom";
 import Home from "./components/home";
 import User from "./components/User";
 import About from "./components/About";
+import Nav1 from "./components/Nav1";
 const App =()=>{
     return(
         <>
-<nav className="mt-10 flex justify-center gap-10">
-    <Link to="/" >Home</Link>
-     <Link to="/User" >User</Link>
-      <Link to="/About" >About</Link>
-</nav>
+<Nav1/>
 <Routes>
     <Route path ="/" element={<Home/>} />
-    <Route path ="/User" element={<User/>} />
-    <Route path ="/About" element={<About/>} />
+    <Route path ="/user" element={<User/>} />
+    <Route path ="/about" element={<About/>} />
 
    
 </Routes>
