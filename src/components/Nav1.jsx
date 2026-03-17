@@ -1,4 +1,5 @@
 import react from "react";
+import { Link } from "react-router-dom";
 const Nav1 =()=>{
     return(
         
@@ -9,5 +10,5 @@ const Nav1 =()=>{
 </nav>
         
     );
-};
+}
 export default Nav1;

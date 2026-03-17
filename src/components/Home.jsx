@@ -7,7 +7,7 @@ const Home = ()=>{
         <p className="mb-2 text-zinc-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero debitis nulla voluptates adipisci, cum id quos ullam, neque modi aut quod nam veniam ad eos dolorem minima a ducimus. Quisquam?
 
         </p>
-        <button className="p-3 bg-red-300 text-white">  explore more  </button>
+        <button className="px-2 py-1 bg-red-500 text-white text-xm rounded-full m-2">  explore more  </button>
         </div>
     
     );
