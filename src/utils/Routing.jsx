@@ -9,6 +9,13 @@ const Routing = ()=>{
     <Route path ="/" element={<Home/>} />
     <Route path ="/user" element={<User/>} />
     <Route path ="/about" element={<About/>} />
+    {/* C:/Users/manish bhai/Desktop/react/src/utils/Routing.jsx:3:17
+2  |  import react from "react";
+3  |  import { Routes, Route } from "react-router-dom";
+4  |  import Home from "./components/Home";
+   |                    ^
+5  |  import User from "./components/User";
+6  |  import About from "./components/About"; */}
 
    
 </Routes>
