@@ -240,24 +240,24 @@
 //   )
 // }
 // export default App;
-import react from "react";
-// import {Link,Route,Routes} from "react-router-dom";
-// import Home from "./components/home";
-// import User from "./components/User";
-// import About from "./components/About";
-import Nav1 from "./components/Nav1";
-import Routing from "./utils/Routing";
-const App =()=>{
-    return(
-        <>
-<Nav1/>
-<Routing/>
+// import react from "react";
+// // import {Link,Route,Routes} from "react-router-dom";
+// // import Home from "./components/home";
+// // import User from "./components/User";
+// // import About from "./components/About";
+// import Nav1 from "./components/Nav1";
+// import Routing from "./utils/Routing";
+// const App =()=>{
+//     return(
+//         <>
+// <Nav1/>
+// <Routing/>
 
         
-        </>
-    );
-};
-export default App;
+//         </>
+//     );
+// };
+// export default App;
 // //  File: C:/Users/manish bhai/Desktop/react/src/utils/Routing.jsx:3:17
 //   2  |  import react from "react";
 //   3  |  import { Routes, Route } from "react-router-dom";
@@ -265,4 +265,28 @@ export default App;
 //      |                    ^
 //   5  |  import User from "./components/User";
 //   6  |  import About from "./components/About";
+import Show from "./components/show";
+import { Link,Routes,Route } from "react-router-dom";
+import Home1 from "./components/Home1";
+const App = ()=>{
+    return(
+        <div className="pt-[5%] pl-[5%]">
+            <nav>
+                <Link to="/">Home1</Link>
+                 <Link to="/user">Show</Link>
+                  
 
+            </nav>
+            <hr />
+            <Routes>
+                <Route path="/" element={Home1}/>
+                <Route path="/show" element={Show}/>
+            </Routes>
+        </div>
+    )
+    
+   
+       
+    
+};
+export default App;
