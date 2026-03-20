@@ -268,12 +268,14 @@
 import Show from "./components/show";
 import { Link,Routes,Route } from "react-router-dom";
 import Home1 from "./components/Home1";
+import Services from "./components/services";
 const App = ()=>{
     return(
         <div className="pt-[5%] pl-[5%]">
-            <nav>
+            <nav className="flex justify-center gap-10">
                 <Link to="/">Home1</Link>
-                 <Link to="/user">Show</Link>
+                 <Link to="/show">Show</Link>
+                 <Link to="/services">Services</Link>
                   
 
             </nav>
@@ -281,6 +283,7 @@ const App = ()=>{
             <Routes>
                 <Route path="/" element={Home1}/>
                 <Route path="/show" element={Show}/>
+                <Route to ="/services" element={Services}/>
             </Routes>
         </div>
     )
