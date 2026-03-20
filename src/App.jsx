@@ -266,7 +266,7 @@
 //   5  |  import User from "./components/User";
 //   6  |  import About from "./components/About";
 import Show from "./components/show";
-import { Link,Routes,Route } from "react-router-dom";
+import { Link,Route,Routes } from "react-router-dom";
 import Home1 from "./components/Home1";
 import Services from "./components/services";
 const App = ()=>{
@@ -281,9 +281,9 @@ const App = ()=>{
             </nav>
             <hr />
             <Routes>
-                <Route path="/" element={Home1}/>
-                <Route path="/show" element={Show}/>
-                <Route to ="/services" element={Services}/>
+                <Route path="/" element={<Home1/>}/>
+                <Route path="/show" element={<Show/>}/>
+                <Route path ="/services" element={<Services/>}/>
             </Routes>
         </div>
     )
