@@ -36,8 +36,7 @@ const Show= ()=>{
             <br />
             <button onClick={addProduct} className="px-5 py-2 bg-red-300 text-zinc-300 rounded mt-10 hover:bg-red-600">save new product</button>
             <div className="mt-10">
-                {loading ?( <h1>...loading</h1>):product.length===0 ?(<h1>no product found</h1>):<ul>
-                    (product.map((p)=>{<li key={p.id} className="p-3 bg-red-300 rounded mb-2 w-1/4">{p.title}</li>}))}  </ul>
+             {loading ? (<h1>loading...</h1>):product.length===0 ? (<h1>product not found</h1>): <ul>(product.map((p)=>{<li key={p.id} className="p-3 w-1/4 bg-red-300 hover:bg-red-600 rounded ">{p.title}</li>}))</ul>}
           
         </div>
         </div>
